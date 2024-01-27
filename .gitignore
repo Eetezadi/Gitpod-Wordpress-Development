@@ -1,6 +1,7 @@
 
 # Ignore WP Root (unless you do WP core development)
 wp-core
+db-data
 
 # ignore everything in the root except the "wp-content" directory.
 !wp-content/
