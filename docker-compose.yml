@@ -2,7 +2,7 @@ services:
   db:
     image: mariadb:latest
     volumes:
-      - ./db-data:/var/lib/mysql
+      - mariadb:/var/lib/mysql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: password

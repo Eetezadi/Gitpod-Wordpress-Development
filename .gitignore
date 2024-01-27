@@ -1,5 +1,3 @@
-# Ignore "db-data" this is where the database is kept. Uncomment for persistance.
-db-data
 
 # Ignore WP Root (unless you do WP core development)
 wp-core
