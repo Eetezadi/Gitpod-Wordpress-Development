@@ -9,7 +9,8 @@ tasks:
 - name: wordpress-install
   init: |
     gp sync-await docker
-    sleep 60
+    echo "Waiting 30s for DB to get ready..."
+    sleep 30
     docker exec -it gitpod-wordpress-development-wordpress-1 wp core install --url="8000-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}" --title="Gitpod Wordpress Development" --admin_user="admin" --admin_password="admin" --admin_email="you@example.com" --allow-root
 
 ports:
