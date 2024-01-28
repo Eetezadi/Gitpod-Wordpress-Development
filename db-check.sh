@@ -3,7 +3,7 @@ set -e
 
 echo "Waiting for database to become ready..."
 
-while ! docker-compose exec -T gitpod-wordpress-development-db-1 mysqladmin ping -h "localhost" --silent; do
+while ! docker-compose exec -T mariadb mysql -uroot -p"rootpassword" -e 'SELECT 1' --silent; do
   echo -n "."
   sleep 2
 done

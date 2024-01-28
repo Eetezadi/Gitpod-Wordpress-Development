@@ -10,7 +10,7 @@ services:
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      test: ["CMD-SHELL", "mysql -uroot -p$${MYSQL_ROOT_PASSWORD} -e 'SELECT 1'"]
       interval: 10s
       timeout: 10s
       retries: 5
