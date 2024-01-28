@@ -9,11 +9,6 @@ services:
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
-    healthcheck:
-      test: ["CMD-SHELL", "mysql -uroot -p$${MYSQL_ROOT_PASSWORD} -e 'SELECT 1'"]
-      interval: 10s
-      timeout: 10s
-      retries: 5
   
   phpmyadmin:
     depends_on:
@@ -31,7 +26,7 @@ services:
       - db
     build: 
       context: .
-      dockerfile: wp-dockerfile
+      dockerfile: wp-dockerfile #contains WP-CLI
     ports:
       - '8000:80'
     restart: always
@@ -43,7 +38,6 @@ services:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
-      WORDPRESS_URL: 8000-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST} 
       
 volumes:
   db-data:
