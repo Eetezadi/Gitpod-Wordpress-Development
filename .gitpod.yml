@@ -8,6 +8,8 @@ tasks:
 
 - name: wordpress-install
   # Waits a little and then configures Wordpress
+  # More wp-cli commands are possible following "docker exec -it gitpod-wordpress-development-wordpress-1" and ending with "--allow-root"
+  # Last line opens Website in new browser window
   init: |
     gp sync-await docker
     echo "Waiting 15s for DB to get ready..."

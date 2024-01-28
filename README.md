@@ -9,10 +9,10 @@ This is a template repo, you can create your own using this as a template. Or le
 
 ## What this does
 
-* Runs Wordpress on MariaDB on port 8000 and PhpmyAdmin on port 8080
+* Runs Wordpress on MariaDB on port 8000 and PhpmyAdmin on port 8080 via docker-compose
+* Installs WP-CLI in the wordpress container and pre-configures Wordpress (more option can be added in gitpod.yml)
 * Exposes "wp-content" folder to Gitpod, so you can add your plugins and themes
 * Exposes Wordpress files on "wp-core" (ignored in .gitognore)
-* The data from the DB stored in Gitpod so persists for individual workspaces
 
 ## What you can do
 * Setup Wordpress and start developing...
