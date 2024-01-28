@@ -3,12 +3,11 @@ tasks:
   init: |
     docker-compose pull
   command: |
-    docker-compose up -d
-    gp sync-done docker
+    docker-compose up
 
 - name: wordpress-install
   init: |
-    gp sync-await docker
+    ./wait-for-db.sh
     docker exec -it gitpod-wordpress-development-wordpress-1 wp core install --url="8000-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}" --title="Gitpod Wordpress Development" --admin_user="admin" --admin_password="admin" --admin_email="you@example.com" --allow-root
 
 ports:
