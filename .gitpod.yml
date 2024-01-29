@@ -19,11 +19,9 @@ tasks:
   # Then open Wordpress in Browser
   command: |
       sudo chmod -R 755 ./wp-core
-      sudo chmod -R 755 ./wp-content/plugins
-      sudo chmod -R 755 ./wp-content/themes
       sudo chown -R gitpod:gitpod ./wp-core
-      sudo chown -R gitpod:gitpod ./wp-content/plugins
-      sudo chown -R gitpod:gitpod ./wp-content/themes
+      sudo chmod -R 755 ./wp-content
+      sudo chown -R gitpod:gitpod ./wp-content
       gp preview $(gp url 8000) --external
 
 
