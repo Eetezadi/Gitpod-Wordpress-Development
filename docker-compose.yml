@@ -41,8 +41,3 @@ services:
       
 volumes:
   db-data:
-  wp-plugins:
-    driver_opts:
-      type: none
-      device: ${PWD}/wp-core
-      o: bind,uid=33333,gid=33333
