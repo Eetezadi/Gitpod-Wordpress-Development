@@ -44,5 +44,5 @@ volumes:
   wp-plugins:
     driver_opts:
       type: none
-      device: ${PWD}/wp-content/plugins
+      device: ${PWD}/wp-core
       o: bind,uid=33333,gid=33333
