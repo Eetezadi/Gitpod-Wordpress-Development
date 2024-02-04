@@ -14,7 +14,7 @@ tasks:
     gp sync-await docker
     echo "Waiting 20s for DB to get ready..."
     sleep 20
-    docker exec -it gitpod-wordpress-development-wordpress-1 wp core install --url="8000-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}" --title="Gitpod Wordpress Development" --admin_user="admin" --admin_password="admin" --admin_email="you@example.com" --allow-root
+    docker exec -it gitpod-wpdev-wordpress wp core install --url="8000-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}" --title="Gitpod Wordpress Development" --admin_user="admin" --admin_password="admin" --admin_email="you@example.com" --allow-root
   # Set permission that "gitpod" user can access folders created inside docker container. Couldn't find a better way.
   # Then open Wordpress in Browser
   command: |
