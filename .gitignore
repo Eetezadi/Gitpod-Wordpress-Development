@@ -5,7 +5,7 @@ wp-core
 # ignore the default plugins
 wp-content/plugins/hello.php
 wp-content/plugins/index.php
-wp-content/plugins/akismet/*
+wp-content/plugins/akismet/
 
 # ignore the default themes
 wp-content/themes/twenty*/
