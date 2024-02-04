@@ -34,3 +34,4 @@ ports:
 vscode:
   extensions:
     - ms-azuretools.vscode-docker
+    - johnbillion.vscode-wordpress-hooks
