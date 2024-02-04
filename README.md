@@ -14,6 +14,7 @@ This is a template repo, you can create your own using this as a template. Or le
 * Installs WP-CLI in the wordpress container and pre-configures Wordpress (more option can be added in gitpod.yml)
 * Exposes "wp-content" folder to Gitpod, so you can add your plugins and themes
 * Exposes Wordpress files on "wp-core" (ignored in .gitognore)
+* Includes Github Actions for automatic SemVer versioning
 
 ## What you can do
 * Setup Wordpress and start developing...
