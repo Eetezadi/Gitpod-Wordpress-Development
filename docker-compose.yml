@@ -1,7 +1,7 @@
 services:
   db:
     image: mariadb:latest
-    container_name: github-wpdev-db
+    container_name: gitpod-wpdev-db
     volumes:
       - db-data:/var/lib/mysql
     restart: always
@@ -17,7 +17,7 @@ services:
     build: 
       context: .
       dockerfile: wp-dockerfile #contains WP-CLI
-    container_name: github-wpdev-wordpress
+    container_name: gitpod-wpdev-wordpress
     ports:
       - '8000:80'
     restart: always
