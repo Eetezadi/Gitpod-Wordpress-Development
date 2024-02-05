@@ -1,28 +1,30 @@
 tasks:
 - name: docker-install
+  # The built step is helpful because we modify the wordpress docker image to include wp-CLI
   init: |
     docker-compose pull
-    gp sync-done docker
+    docker-compose build
+    echo "Docker images built. Starting Docker..."
   command: |
+    gp sync-done docker
     docker-compose up
 
 - name: wordpress-install
-  # Waits a little and then configures Wordpress
+  # Waits a little for DB to be fully up and then configures Wordpress
   # More wp-cli commands are possible following "docker exec -it gitpod-wordpress-development-wordpress-1" and ending with "--allow-root"
-  # Last line opens Website in new browser window
+  # Finally set permissions on newly installed files for github user
   init: |
     gp sync-await docker
-    echo "Waiting 20s for DB to get ready..."
-    sleep 20
-    docker exec -it gitpod-wpdev-wordpress wp core install --url="8000-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}" --title="Gitpod Wordpress Development" --admin_user="admin" --admin_password="admin" --admin_email="you@example.com" --allow-root
-  # Set permission that "gitpod" user can access folders created inside docker container. Couldn't find a better way.
-  # Then open Wordpress in Browser
+    sleep 10
+    echo "Installing Wordpress..."
+    docker exec -it gitpod-wpdev-wordpress wp core install --url="8000-${GITPOD_WORKSPACE_ID}.${GITPOD_WORKSPACE_CLUSTER_HOST}" --title="Gitpod Wordpress Development" --admin_user="admin" --admin_password="admin" --admin_email="you@example.com" --skip-email --allow-root
+    sudo chmod -R 755 ./wp-core
+    sudo chown -R gitpod:gitpod ./wp-core
+    sudo chmod -R 755 ./wp-content
+    sudo chown -R gitpod:gitpod ./wp-content
+  # Opens Wordpress in external browser
   command: |
-      sudo chmod -R 755 ./wp-core
-      sudo chown -R gitpod:gitpod ./wp-core
-      sudo chmod -R 755 ./wp-content
-      sudo chown -R gitpod:gitpod ./wp-content
-      gp preview $(gp url 8000) --external
+    gp preview $(gp url 8000) --external
 
 
 ports:
