@@ -25,7 +25,7 @@ services:
       - ./wp-core:/var/www/html
       - ./wp-content/plugins:/var/www/html/wp-content/plugins
       - ./wp-content/themes:/var/www/html/wp-content/themes
-      - ./.env/apache-logs:/var/log/apache2
+      - ./.env/wp-apache-logs:/var/log/apache2
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: wordpress
@@ -38,10 +38,13 @@ services:
     restart: always
     ports:
       - '8080:80'
+    volumes:
+      - ./.env/pma-apache-logs:/var/log/apache2
     environment:
       PMA_HOST: db
       MYSQL_ROOT_PASSWORD: password 
       
 volumes:
   db-data:
-  apache-logs:
+  wp-apache-logs:
+  pma-apache-logs:
