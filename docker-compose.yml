@@ -16,7 +16,7 @@ services:
       - db
     build: 
       context: .
-      dockerfile: wp-dockerfile #contains WP-CLI
+      dockerfile: ./.env/wp-dockerfile #contains WP-CLI
     container_name: gitpod-wpdev-wordpress
     ports:
       - '8000:80'
@@ -25,7 +25,7 @@ services:
       - ./wp-core:/var/www/html
       - ./wp-content/plugins:/var/www/html/wp-content/plugins
       - ./wp-content/themes:/var/www/html/wp-content/themes
-      - ./apache-logs:/var/log/apache2
+      - ./.env/apache-logs:/var/log/apache2
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: wordpress
