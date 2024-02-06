@@ -22,6 +22,7 @@ tasks:
     sudo chown -R gitpod:gitpod ./wp-core
     sudo chmod -R 755 ./wp-content
     sudo chown -R gitpod:gitpod ./wp-content
+    sudo chmod -R 777 /var/log/apache2
   # Opens Wordpress in external browser
   command: |
     gp preview $(gp url 8000) --external
