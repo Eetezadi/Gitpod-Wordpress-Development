@@ -23,8 +23,10 @@ tasks:
     sudo chmod -R 755 ./wp-content
     sudo chown -R gitpod:gitpod ./wp-content
   # Opens Wordpress in external browser
+  # Tail the logs
   command: |
     gp preview $(gp url 8000) --external
+    multitail ./.env/wp-apache-logs/access.log -I ./.env/wp-apache-logs/error.log
 
 
 ports:
