@@ -1,11 +1,9 @@
-# Gitpod-Wordpress-Development
-Template repository for Wordpress Plugin and Theme development
+# Codespaces-Wordpress-Development
+Template repository for Wordpress Plugin and Theme development in Github Codespaces
 
 ## Try or Contribute
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#https://github.com/Eetezadi/Gitpod-Wordpress-Development)
 
-This is a template repo, you can create your own using this as a template. Or let Gitpod handle the fork on first commit.
 
 ## What this does
 
