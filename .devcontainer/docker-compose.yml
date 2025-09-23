@@ -22,7 +22,8 @@ services:
     volumes: 
       - ../wp-core:/var/www/html
       - ../wp-content/themes:/var/www/html/wp-content/themes
-      - ../plugins-src:/var/www/html/wp-content/plugins
+      - ../wp-content/plugins:/var/www/html/wp-content/plugins
+      - ../.devcontainer/setup.sh:/setup.sh
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_NAME: wordpress

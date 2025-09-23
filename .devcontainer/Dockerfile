@@ -9,5 +9,5 @@ RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
 RUN apt-get update && apt-get install -y \
     vim \
     nano \
-    mysql-client \
+    mariadb-client \
     && rm -rf /var/lib/apt/lists/*
