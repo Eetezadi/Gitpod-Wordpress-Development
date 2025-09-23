@@ -36,6 +36,6 @@
       ]
     }
   },
-  "postCreateCommand": "chmod +x /setup.sh",
-  "postStartCommand": "bash /setup.sh"
+  "postCreateCommand": "git config --global --add safe.directory /workspaces/${localWorkspaceFolderBasename}",
+  "postStartCommand": "/setup.sh"
 }

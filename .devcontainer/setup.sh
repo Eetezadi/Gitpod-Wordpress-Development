@@ -16,9 +16,6 @@ if ! wp core is-installed --allow-root 2>/dev/null; then
         --skip-email \
         --allow-root
 
-    # Install dev plugins
-    wp plugin install query-monitor debug-bar --activate --allow-root
-    
     echo "WordPress installed!"
 else
     echo "WordPress already exists"

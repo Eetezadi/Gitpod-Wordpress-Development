@@ -11,3 +11,7 @@ RUN apt-get update && apt-get install -y \
     nano \
     mariadb-client \
     && rm -rf /var/lib/apt/lists/*
+
+# Copy setup script
+COPY setup.sh /setup.sh
+RUN chmod +x /setup.sh
