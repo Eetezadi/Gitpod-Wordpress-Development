@@ -9,6 +9,7 @@
       "version": "lts"
     },
     "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/git-lfs:1": {}, // Git LFS support
     "ghcr.io/devcontainers/features/common-utils:2": {
       "installZsh": true,
       "upgradePackages": true
@@ -36,6 +37,6 @@
       ]
     }
   },
-  "postCreateCommand": "git config --global --add safe.directory /workspaces/${localWorkspaceFolderBasename}",
+  "postCreateCommand": "git config --global --add safe.directory /workspaces/${localWorkspaceFolderBasename}", // Fixes VS Code warning about unsafe repository
   "postStartCommand": "/setup.sh"
 }
