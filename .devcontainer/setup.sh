@@ -4,16 +4,31 @@ echo "Setting up WordPress..."
 # Wait for database
 sleep 15
 
-echo "Installing WordPress..."
+# Determine the site URL based on environment
+if [ -n "$CODESPACE_NAME" ]; then
+    SITE_URL="https://$CODESPACE_NAME-8000.app.github.dev"
+else
+    SITE_URL="http://localhost:8000"
+fi
+
+echo "Installing WordPress at $SITE_URL..."
 cd /var/www/html
 wp core install \
-    --url="http://localhost:8000" \
+    --url="$SITE_URL" \
     --title="WordPress Dev" \
     --admin_user="admin" \
     --admin_password="admin" \
     --admin_email="admin@example.com" \
     --skip-email \
     --allow-root
+
+# Update site URL and home in wp-config.php to support both URLs
+wp option update home "$SITE_URL" --allow-root
+wp option update siteurl "$SITE_URL" --allow-root
+
+# Configure WordPress to work with both URLs
+wp config set WP_HOME "isset(\$_SERVER['CODESPACE_NAME']) ? 'https://' . \$_SERVER['CODESPACE_NAME'] . '-8000.app.github.dev' : 'http://localhost:8000'" --raw --allow-root
+wp config set WP_SITEURL "isset(\$_SERVER['CODESPACE_NAME']) ? 'https://' . \$_SERVER['CODESPACE_NAME'] . '-8000.app.github.dev' : 'http://localhost:8000'" --raw --allow-root
 
 echo "WordPress installed!"
 
