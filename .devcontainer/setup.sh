@@ -4,9 +4,8 @@ echo "Setting up WordPress..."
 # Wait for database
 sleep 15
 
-# Install WordPress if not exists
-
 echo "Installing WordPress..."
+cd /var/www/html
 wp core install \
     --url="http://localhost:8000" \
     --title="WordPress Dev" \
