@@ -2,7 +2,7 @@
 
 A comprehensive Docker-based development environment for WordPress plugin and theme development, optimized for GitHub Codespaces and local development.
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/your-username/your-repo-name)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/eetezadi/Codespaces-Wordpress-Development)
 
 ## 🚀 Quick Start
 
@@ -105,4 +105,4 @@ This template is open source and available under the [MIT License](LICENSE).
 
 ---
 
-Built with ❤️ by [@eetezadi](https://github.com/eetezadi) 
+Built with ❤️ by [@eetezadi](https://github.com/eetezadi)
