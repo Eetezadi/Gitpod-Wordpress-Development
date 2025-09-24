@@ -7,11 +7,10 @@ RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
 
 # Install additional tools for development
 RUN apt-get update && apt-get install -y \
-    vim \
     nano \
     mariadb-client \
     && rm -rf /var/lib/apt/lists/*
-
+    
 # Copy setup script
 COPY setup.sh /setup.sh
 RUN chmod +x /setup.sh

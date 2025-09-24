@@ -38,6 +38,9 @@ rm themeunittestdata.wordpress.xml
 
 echo "Sample content imported!"
 
+# Install WordPress Create Block tool globally
+npm install -g @wordpress/create-block
+
 echo "Ready at: http://localhost:8000"
 echo "Admin: http://localhost:8000/wp-admin (admin/admin)"
 echo "phpMyAdmin: http://localhost:8080"
