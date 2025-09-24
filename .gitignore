@@ -5,6 +5,7 @@ wp-core
 wp-content/plugins/hello.php
 wp-content/plugins/index.php
 wp-content/plugins/akismet/
+wp-content/plugins/wordpress-importer/
 
 # ignore the default themes
 wp-content/themes/twenty*/
