@@ -4,7 +4,7 @@ echo "Setting up WordPress..."
 # Function to get the correct base URL for the environment
 get_base_url() {
     if [ "${CODESPACES}" = "true" ]; then
-        echo "https://${CODESPACE_NAME}-80.${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}"
+        echo "https://${CODESPACE_NAME}-443.${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}"
     else
         echo "http://localhost:80"
     fi
