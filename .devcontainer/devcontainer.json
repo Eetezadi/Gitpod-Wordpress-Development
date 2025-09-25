@@ -38,4 +38,6 @@
       ]
     }
   },
-  "postCreateCommand": "git config --global --add safe.directory /workspaces/${localWorkspaceFolderBasename} && /setup.sh" // Fixes VS Code warning about unsafe repository}
+  "postCreateCommand": "git config --global --add safe.directory /workspaces/${localWorkspaceFolderBasename} && /setup.sh" // Fixes VS Code warning about unsafe repository
+  
+}
