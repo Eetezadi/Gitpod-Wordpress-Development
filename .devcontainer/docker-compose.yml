@@ -36,7 +36,7 @@ services:
           $$codespace_name = getenv('CODESPACE_NAME');
           $$forwarding_domain = getenv('GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN');
           if ($$codespace_name && $$forwarding_domain) {
-            $$site_url = "https://{$$codespace_name}-443.{$$forwarding_domain}";
+            $$site_url = "https://{$$codespace_name}-80.{$$forwarding_domain}";
             define('WP_HOME', $$site_url);
             define('WP_SITEURL', $$site_url);
           }
