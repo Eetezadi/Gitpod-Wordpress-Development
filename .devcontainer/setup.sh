@@ -1,23 +1,9 @@
 #!/bin/bash
 echo "Setting up WordPress..."
 
-# Function to get the correct base URL for the environment
-get_base_url() {
-    if [ "${CODESPACES}" = "true" ]; then
-        echo "https://${CODESPACE_NAME}-443.${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}"
-    else
-        echo "http://localhost:80"
-    fi
-}
-
-# Function to get phpMyAdmin URL
-get_phpmyadmin_url() {
-    if [ "${CODESPACES}" = "true" ]; then
-        echo "https://${CODESPACE_NAME}-8080.${GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN}"
-    else
-        echo "http://localhost:8080"
-    fi
-}
+# Use simple localhost URLs - HTTP_HOST fix in docker-compose handles Codespaces
+BASE_URL="http://localhost"
+PHPMYADMIN_URL="http://localhost:8080"
 
 # Wait for database
 sleep 15
@@ -25,8 +11,6 @@ sleep 15
 echo "Installing WordPress..."
 cd /var/www/html
 
-# Get the dynamic URL
-BASE_URL=$(get_base_url)
 echo "Installing WordPress at: $BASE_URL"
 
 wp core install \
@@ -63,10 +47,7 @@ echo "Sample content imported!"
 # Install WordPress Create Block tool globally
 npm install -g @wordpress/create-block
 
-# Show environment-appropriate URLs
-BASE_URL=$(get_base_url)
-PHPMYADMIN_URL=$(get_phpmyadmin_url)
-
+echo "WordPress setup complete!"
 echo "Ready at: $BASE_URL"
 echo "Admin: $BASE_URL/wp-admin (admin/admin)"
 echo "phpMyAdmin: $PHPMYADMIN_URL"

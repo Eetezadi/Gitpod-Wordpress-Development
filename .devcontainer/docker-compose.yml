@@ -28,23 +28,7 @@ services:
       WORDPRESS_DB_NAME: wordpress
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
-      WORDPRESS_CONFIG_EXTRA: |
-        // Dynamic URL configuration for WordPress
-        // This handles both localhost development and GitHub Codespaces environments
-        if (getenv('CODESPACES') === 'true') {
-          // GitHub Codespaces environment
-          $$codespace_name = getenv('CODESPACE_NAME');
-          $$forwarding_domain = getenv('GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN');
-          if ($$codespace_name && $$forwarding_domain) {
-            $$site_url = "https://{$$codespace_name}-443.{$$forwarding_domain}";
-            define('WP_HOME', $$site_url);
-            define('WP_SITEURL', $$site_url);
-          }
-        } else {
-          // Local development environment
-          define('WP_HOME', 'http://localhost:80');
-          define('WP_SITEURL', 'http://localhost:80');
-        }
+      WORDPRESS_CONFIG_EXTRA: $_SERVER['HTTP_HOST'] = $_SERVER['HTTP_X_FORWARDED_HOST'];
 
   phpmyadmin:
     depends_on:
