@@ -17,9 +17,9 @@
     }
   },
 
-  "forwardPorts": [8000, 8080],
+  "forwardPorts": [80, 8080],
   "portsAttributes": {
-    "8000": {
+    "80": {
       "label": "WordPress",
       "onAutoForward": "notify"
     },
