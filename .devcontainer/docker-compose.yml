@@ -17,7 +17,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - '80:80'
+      - '8000:80'
     restart: unless-stopped
     volumes: 
       - ../wp-core:/var/www/html
