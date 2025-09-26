@@ -8,11 +8,9 @@ PHPMYADMIN_URL="http://localhost:8080"
 # Wait for database
 sleep 15
 
-echo "Installing WordPress..."
-cd /var/www/html
-
 echo "Installing WordPress at: $BASE_URL"
 
+cd /var/www/html
 wp core install \
     --url="$BASE_URL" \
     --title="WordPress Dev" \
