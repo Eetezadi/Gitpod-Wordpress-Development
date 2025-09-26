@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Setting up WordPress..."
 
-# Use simple localhost URLs - HTTP_HOST fix in docker-compose handles Codespaces
+# Base URLs
 BASE_URL="http://localhost:8000"
 PHPMYADMIN_URL="http://localhost:8080"
 
