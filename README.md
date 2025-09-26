@@ -23,8 +23,16 @@ A comprehensive Docker-based development environment for WordPress plugin and th
 **Stack:** WordPress + MariaDB + phpMyAdmin + WP-CLI + Node.js + VS Code extensions
 
 **Access URLs:**
+
+*Local Development:*
 - WordPress: http://localhost:8000 (admin/admin)
 - phpMyAdmin: http://localhost:8080 (wordpress/wordpress)
+
+*GitHub Codespaces:*
+- WordPress: https://[codespace-name]-8000.app.github.dev (admin/admin)
+- phpMyAdmin: https://[codespace-name]-8080.app.github.dev (wordpress/wordpress)
+
+The setup script automatically detects your environment and displays the correct URLs.
 
 **Includes:** Sample data, theme unit tests, and @wordpress/create-block tool ready to use.
 
@@ -75,7 +83,7 @@ wp theme activate theme-name --allow-root
 
 # Database operations
 wp db search "old-url" --allow-root
-wp search-replace "old-url.com" "localhost:8000" --allow-root
+wp search-replace "old-url.com" "new-url.com" --allow-root
 
 # User management
 wp user list --allow-root

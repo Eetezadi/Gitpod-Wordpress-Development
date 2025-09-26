@@ -8,6 +8,7 @@
     "ghcr.io/devcontainers/features/node:1": {
       "version": "lts"
     },
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {},
     "ghcr.io/devcontainers/features/git:1": {},
     "ghcr.io/devcontainers/features/git-lfs:1": {}, // Git LFS support
     "ghcr.io/devcontainers/features/common-utils:2": {
@@ -37,6 +38,6 @@
       ]
     }
   },
-  "postCreateCommand": "git config --global --add safe.directory /workspaces/${localWorkspaceFolderBasename}", // Fixes VS Code warning about unsafe repository
-  "postStartCommand": "/setup.sh"
+  "postCreateCommand": "git config --global --add safe.directory /workspaces/${localWorkspaceFolderBasename} && /setup.sh" // Fixes VS Code warning about unsafe repository
+  
 }
