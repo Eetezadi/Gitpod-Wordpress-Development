@@ -2,13 +2,11 @@
 
 A comprehensive Docker-based development environment for WordPress plugin and theme development, optimized for GitHub Codespaces and local development.
 
-## ⚠️ Important Notice
+### ⚠️ Important Notice
 
 **Currently only works with VS Code Desktop!** 
 Due to WordPress's URL hardcoded url handling and Codespace redirect mechanisms, this template does not work properly in the browser-based VS Code. You must use VS Code Desktop with the GitHub Codespaces extension to properly access WordPress on localhost. Maybe someone can provide a pull request to fix? I failed so far...
 
-
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/eetezadi/Codespaces-Wordpress-Development)
 
 ## 🚀 Quick Start
 
