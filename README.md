@@ -2,6 +2,12 @@
 
 A comprehensive Docker-based development environment for WordPress plugin and theme development, optimized for GitHub Codespaces and local development.
 
+## ⚠️ Important Notice
+
+**Currently only works with VS Code Desktop!** 
+Due to WordPress's URL hardcoded url handling and Codespace redirect mechanisms, this template does not work properly in the browser-based VS Code. You must use VS Code Desktop with the GitHub Codespaces extension to properly access WordPress on localhost. Maybe someone can provide a pull request to fix? I failed so far...
+
+
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/eetezadi/Codespaces-Wordpress-Development)
 
 ## 🚀 Quick Start
@@ -10,13 +16,7 @@ A comprehensive Docker-based development environment for WordPress plugin and th
 1. Click "Use this template" → "Create a new repository"
 2. Open your new repository and click "Code" → "Create codespace on main"
 3. Wait for the environment to set up automatically
-4. Access your WordPress site at the forwarded port (usually port 8000)
-
-### Local Development with VS Code
-1. Clone this repository
-2. Open in VS Code with Dev Containers extension installed
-3. Click "Reopen in Container" when prompted
-4. Wait for the setup to complete
+4. Start developing in the wp-content folder
 
 ## 🔧 Environment Setup
 
@@ -27,12 +27,6 @@ A comprehensive Docker-based development environment for WordPress plugin and th
 *Local Development:*
 - WordPress: http://localhost:8000 (admin/admin)
 - phpMyAdmin: http://localhost:8080 (wordpress/wordpress)
-
-*GitHub Codespaces:*
-- WordPress: https://[codespace-name]-8000.app.github.dev (admin/admin)
-- phpMyAdmin: https://[codespace-name]-8080.app.github.dev (wordpress/wordpress)
-
-The setup script automatically detects your environment and displays the correct URLs.
 
 **Includes:** Sample data, theme unit tests, and @wordpress/create-block tool ready to use.
 
